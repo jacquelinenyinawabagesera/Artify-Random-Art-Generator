@@ -1,40 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Artify - Online Art Gallery</title>
+  <link rel="stylesheet" href="./style.css" />
  <meta charset="UTF-8" />
  <meta name="viewport" content="width=device-width, initial-scale=1" />
  <title>Artify - Random Art Generator</title>
  <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
- <header>
-   <h1>Artify - Online Art Gallery</h1>
-   <input type="text" id="searchInput" placeholder="Search by artist or title" />
-   <button id="searchBtn">Search</button>
-   <select id="filterType">
-     <option value="">Filter by Art Type</option>
-     <option value="painting">Painting</option>
-     <option value="sculpture">Sculpture</option>
-     <option value="photograph">Photograph</option>
-   </select>
-
-
-   <label for="startDate">Start Date:</label>
-   <input type="date" id="startDate">
-   <label for="endDate">End Date:</label>
-   <input type="date" id="endDate">
-
-
-   <button id="randomBtn">Show Random Art</button>
- </header>
- <main>
-   <section id="gallery"></section>
-   <section id="favorites">
-     <h1>Personal Gallery</h1>
-     <h2>Favorites</h2>
-     <div id="favoritesGallery"></div>
-   </section>
- </main>
- <script src="./index.js"></script>
+  <header>
+    <h1>Artify - Online Art Gallery</h1>
+    <input type="text" id="searchInput" placeholder="Search by artist or title" />
+    <button id="searchBtn">Search</button>
+    <select id="filterType">
+      <option value="">All Artworks</option>
+      <option value="painting">Painting</option>
+      <option value="sculpture">Sculpture</option>
+      <option value="photograph">Photograph</option>
+      <option value="print">Print</option>
+      <option value="ceramics">Ceramics</option>
+      <option value="textile">Textile</option>
+      <option value="oil on canvas">Oil on Canvas</option>
+    </select>
+    <label for="searchYear">Year:</label>
+    <input type="number" id="searchYear" placeholder="e.g., 1889" min="1000" max="2025">
+    <button id="randomBtn">Show Random Art</button>
+  </header>
+  <main>
+    <section id="gallery"></section>
+    <section id="favorites">
+      <h1>Personal Gallery</h1>
+      <h2>Favorites</h2>
+      <div id="favoritesGallery"></div>
+    </section>
+  </main>
+  <script src="./index.js"></script>
 </body>
-</html>
+</html>  
+
+
+
