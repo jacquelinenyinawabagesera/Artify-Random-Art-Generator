@@ -27,6 +27,9 @@ function displayFavorites() {
   });
 }
 
+
+
+
 function createCard(art, canSave) {
   const card = document.createElement('div');
   card.className = 'art-piece';
@@ -84,7 +87,7 @@ function createCard(art, canSave) {
 function showGallery(arts) {
   gallery.innerHTML = '';
   if (arts.length === 0) {
-    gallery.innerHTML = '<p>No artworks found. Check console logs for details.</p>';
+    gallery.innerHTML = '<p>No artworks found.</p>';
     return;
   }
   console.log('Displaying artworks:', arts.map(art => ({
@@ -100,6 +103,8 @@ function showGallery(arts) {
     gallery.appendChild(card);
   });
 }
+
+
 
 async function fetchArtworks(query, type, year) {
   query = query ? query.trim().toLowerCase() : '';
@@ -168,9 +173,11 @@ async function fetchArtworks(query, type, year) {
     showGallery(arts);
   } catch (error) {
     console.error('Fetch Error:', error);
-    gallery.innerHTML = `<p>Error loading artworks: ${error.message}. Check console logs.</p>`;
+    gallery.innerHTML = `<p>Error loading artworks: ${error.message}.</p>`;
   }
 }
+
+
 
 async function fetchRandomArtworks(type) {
   type = type ? type.toLowerCase() : '';
@@ -197,7 +204,7 @@ async function fetchRandomArtworks(type) {
     showGallery(arts);
   } catch (error) {
     console.error('Random Fetch Error:', error);
-    gallery.innerHTML = `<p>Error loading random artworks: ${error.message}. Check console logs.</p>`;
+    gallery.innerHTML = `<p>Error loading random artworks: ${error.message}.</p>`;
   }
 }
 
