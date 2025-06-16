@@ -1,0 +1,196 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+ 
+  body {
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+    background: linear-gradient(120deg, #F7FAFC 0%, #E3E6F3 100%);
+    color: #222;
+    min-height: 100vh;
+  }
+
+  header {
+    background: linear-gradient(90deg, #1E3C72 0%, #2A5298 100%);
+    color: white;
+    padding: 2rem 1rem 1.5rem 1rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+    box-shadow: 0 2px 12px rgba(30,60,114,0.10);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  header h1 {
+    font-size: 2.2rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-right: 1.5rem;
+    text-shadow: 1px 2px 10px rgba(30,60,114,0.15);
+  }
+  header input, header select, header button {
+    padding: 0.7rem 1.1rem;
+    font-size: 1rem;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    margin-right: 0.2rem;
+    transition: box-shadow 0.2s, border 0.2s;
+  }
+  header input, header select {
+    background: #F1F4FA;
+    color: #222;
+    border: 1px solid #E0E6F7;
+  }
+  header input:focus, header select:focus {
+    border: 1.5px solid #2A5298;
+    box-shadow: 0 2px 8px rgba(42,82,152,0.10);
+  }
+  header button {
+    background: linear-gradient(90deg, #2A5298 0%, #1E3C72 100%);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 2px 8px rgba(42,82,152,0.10);
+    transition: background 0.2s, transform 0.15s;
+  }
+  header button:hover {
+    background: linear-gradient(90deg, #1E3C72 0%, #2A5298 100%);
+    transform: translateY(-2px) scale(1.04);
+  }
+ 
+  main {
+    padding: 2rem 2vw 2rem 2vw;
+    display: flex;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+  }
+ 
+  #gallery, #favoritesGallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(260px,1fr));
+    gap: 2rem;
+    flex: 1 1 400px;
+    min-width: 300px;
+  }
+  .art-piece {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 6px 24px rgba(42,82,152,0.10), 0 1.5px 4px rgba(42,82,152,0.04);
+    padding: 1.2rem 1rem 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.7rem;
+    transition: box-shadow 0.2s, transform 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+  .art-piece:hover {
+    box-shadow: 0 12px 32px rgba(42,82,152,0.16), 0 2px 8px rgba(42,82,152,0.06);
+    transform: translateY(-4px) scale(1.03);
+  }
+  .art-piece img {
+    width: 100%;
+    max-width: 220px;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(42,82,152,0.10);
+    background: #F1F4FA;
+  }
+  .art-piece h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1E3C72;
+    margin-bottom: 0.2rem;
+    text-align: center;
+  }
+  .art-piece p {
+    font-size: 0.97rem;
+    color: #444;
+    margin: 0.1rem 0;
+    text-align: center;
+  }
+  .art-piece button {
+    margin-top: 0.4rem;
+    padding: 0.45rem 1.2rem;
+    background: linear-gradient(90deg, #2A5298 0%, #1E3C72 100%);
+    color: #fff;
+    font-weight: 500;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 1px 4px rgba(42,82,152,0.07);
+    transition: background 0.2s, transform 0.15s;
+  }
+  .art-piece button:hover {
+    background: linear-gradient(90deg, #1E3C72 0%, #2A5298 100%);
+    transform: scale(1.06);
+  }
+
+  #favorites {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 4px 18px rgba(42,82,152,0.09);
+    padding: 1.2rem 1.2rem 1.2rem 1.2rem;
+    min-width: 340px;
+    max-width: 420px;
+    flex: 0 1 400px;
+    h1{
+      font-size: 200%;
+      padding:2%;
+      text-align: center;
+    }
+  }
+  #favorites h2 {
+    font-size: 1.3rem;
+    color: #2A5298;
+    margin-bottom: 1rem;
+    text-align: left;
+    letter-spacing: 1px;
+  }
+  #favoritesGallery {
+    min-height: 80px;
+  }
+  
+  @media (max-width: 900px) {
+    main {
+      flex-direction: column;
+      gap: 2rem;
+      padding: 1.2rem 1vw;
+    }
+    #favorites {
+      max-width: 100%;
+      min-width: 0;
+      margin-top: 2rem;
+    }
+  }
+  @media (max-width: 600px) {
+    header {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0.7rem;
+      padding: 1.2rem 0.5rem;
+    }
+    main {
+      padding: 1rem 0.5vw;
+    }
+    #gallery, #favoritesGallery {
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+    }
+  }
+
+
+
+
+
+
+
