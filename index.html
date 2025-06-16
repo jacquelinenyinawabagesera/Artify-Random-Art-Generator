@@ -1,15 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Artify — Random Art Generator</title>
-    <link rel="stylesheet" href="./style.css">
-    <link rel="icon" type="image/x-icon" href="./images/art.jpg">
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <title>Artify - Random Art Generator</title>
+ <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
-    
+ <header>
+   <h1>Artify - Online Art Gallery</h1>
+   <input type="text" id="searchInput" placeholder="Search by artist or title" />
+   <button id="searchBtn">Search</button>
+   <select id="filterType">
+     <option value="">Filter by Art Type</option>
+     <option value="painting">Painting</option>
+     <option value="sculpture">Sculpture</option>
+     <option value="photograph">Photograph</option>
+   </select>
 
-<script src="./index.js"></script>
+
+   <label for="startDate">Start Date:</label>
+   <input type="date" id="startDate">
+   <label for="endDate">End Date:</label>
+   <input type="date" id="endDate">
+
+
+   <button id="randomBtn">Show Random Art</button>
+ </header>
+ <main>
+   <section id="gallery"></section>
+   <section id="favorites">
+     <h1>Personal Gallery</h1>
+     <h2>Favorites</h2>
+     <div id="favoritesGallery"></div>
+   </section>
+ </main>
+ <script src="./index.js"></script>
 </body>
 </html>
