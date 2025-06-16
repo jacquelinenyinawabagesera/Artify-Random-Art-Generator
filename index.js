@@ -226,8 +226,6 @@ randomBtn.addEventListener('click', () => {
   const type = filterType.value;
   fetchRandomArtworks(type);
 });
-
-
 displayFavorites();
 fetchRandomArtworks();
 
